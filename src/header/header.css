@@ -4,7 +4,8 @@
     font-size: larger;
     color:rgb(5, 241, 52);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding: 0px 70px;
     align-items: center;
 }
 
@@ -18,7 +19,7 @@
      justify-content: space-evenly;
      align-items: center;
      display: flex;
-
+     
 }
 .meal {
  font-size: 50px;
@@ -27,11 +28,39 @@
 }
 
 .cart p {
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
     background-color: brown;
-    border-radius: 20px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
-    
+    align-items: center;
+    margin-left:-23px;
 }
+.image {
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .image1 {
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    max-width: 600px; 
+    padding: 10px;
+    background-color: rgba(41, 39, 39, 0.8); 
+    text-align: center;
+    border-radius: 20px;
+    color:white;
+  }
+  
+  .image1 h1 {
+    font-size: 24px;
+    color: rgb(233, 233, 23);
+  }
+  
+  .image1 p {
+    font-size: 16px;
+  }
+  
