@@ -11,17 +11,17 @@ const Overlay = (props) => {
 
 const Backdrop = (props) => {
     return (
-      <div className={classes.backdrop}></div>
+      <div className={classes.backdrop} onClick={props.onClose}></div>
     )
 }
 const element = document.getElementById('overlay');
 
 const Modal = (props)=> {
-    return 
+    return (
         <Fragment>
-            {ReactDOM.createPortal(<Backdrop />, element)}
+            {ReactDOM.createPortal(<Backdrop onClose={props.onClose} />, element)}
             {ReactDOM.createPortal(<Overlay>{props.children}</Overlay>, element)}
         </Fragment>
-    
+    ) 
 }
 export default Modal
