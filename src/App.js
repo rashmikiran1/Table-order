@@ -2,7 +2,7 @@ import React, { Fragment, useState} from "react";
 import Header from "./header/Header";
 import Cart from "./cart/cart";
 
-function App() {
+function App(props) {
   const [cartShow,setCartshow] = useState(false);
   const Showcart = () => {
     setCartshow(true);
@@ -13,7 +13,7 @@ function App() {
  
   return (
     <Fragment>
-      {cartShow && <Cart onclose={hidecart} />}
+      {cartShow &&  <Cart onClose={hidecart} cartItems={props.cartItems} />}
       <Header onShowcart={Showcart} />
     </Fragment>
   );

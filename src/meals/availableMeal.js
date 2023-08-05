@@ -37,7 +37,7 @@ const Meals = [
 
 const AvailableMeals = (props) => {
     const meal = Meals.map((Meal) => (
-        <MealItem name={Meal.name} Description={Meal.Description} Price={Meal.price} />
+        <MealItem name={Meal.name} Description={Meal.Description} price={Meal.price} />
       ));
     return <section className={classes.meals}>
         <Card>
