@@ -13,11 +13,16 @@ export const CartContextProvider = (props) => {
 
   const addItemToCartHandler = (item) => {
     setCartItems((prevItems) => {
+      const updatedItems = [...prevItems, item];
+      return updatedItems;
     });
   };
+  
 
   const removeItemFromCartHandler = (id) => {
     setCartItems((prevItems) => {
+      const updatedItems = prevItems.filter((item) => item.id !== id);
+      return updatedItems;
     });
   };
 
@@ -25,11 +30,26 @@ export const CartContextProvider = (props) => {
     setCartItems([]);
   };
 
+  const updateItemQuantityHandler = (id, newQuantity) => {
+    setCartItems((prevItems) => {
+      const updatedItems = prevItems.map((item) => {
+        if (item.id === id) {
+          return { ...item, amount: newQuantity };
+        }
+        return item;
+      });
+      const filteredItems = updatedItems.filter((item) => item.amount > 0);
+
+      return filteredItems;
+    });
+  };
+
   const contextValue = {
     items: cartItems,
     totalAmount: 0,
     addItem: addItemToCartHandler,
     removeItem: removeItemFromCartHandler,
+    updateItemQuantity: updateItemQuantityHandler, 
     clearCart: clearCartHandler,
   };
 
